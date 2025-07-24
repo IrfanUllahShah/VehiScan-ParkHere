@@ -389,11 +389,10 @@ def register(request):
             password = form.cleaned_data.get('password')
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
+            user_type = form.cleaned_data.get('user_type')
             phone = form.cleaned_data.get('phone')
-
             user = User.objects.create_user(username=str(first_name), email=email, password=password, first_name=first_name, last_name=last_name)
-            UserProfile.objects.create(user=user, phone_number=phone)
-
+            UserProfile.objects.create(user=user, phone_number=phone, user_type=user_type)
             login(request, user)
             messages.success(request, 'Registration successful.')
             return redirect('home')
