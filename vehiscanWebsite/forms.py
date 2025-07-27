@@ -43,12 +43,12 @@ class UserForm(forms.ModelForm):
 class DriverProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['avatar', 'user_type', 'phone_number', 'vehicle_type', 'license_plate', 'stripe_account_id']
+        fields = ['avatar', 'user_type', 'phone_number', 'vehicle_type', 'license_plate']
 
 class ParkingLotOwnerProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['avatar', 'user_type', 'phone_number', 'company_name', 'stripe_account_id']
+        fields = ['avatar', 'user_type', 'phone_number', 'company_name']
 
 class ProfileForm(forms.ModelForm):
     class Meta:

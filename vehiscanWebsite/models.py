@@ -35,9 +35,7 @@ class UserProfile(models.Model):
     license_plate = models.CharField(max_length=15, blank=True)
     
     #fields related to Parking Lot Owner
-    company_name = models.CharField(max_length=255, blank=True)
-    stripe_account_id = models.CharField(max_length=100, blank=True)  # For payment processing
-    
+    company_name = models.CharField(max_length=255, blank=True)    
 
     def __str__(self):
         return f"{self.user.username} ({self.get_user_type_display()})"
